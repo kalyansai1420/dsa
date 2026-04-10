@@ -1,17 +1,17 @@
 class Solution {
     public boolean isSubsequence(String s, String t) {
-        int top = 0;
-        int bottom = 0;
- 
-        while(top<s.length() && bottom<t.length()){
-            if(s.charAt(top)==t.charAt(bottom)){
-                top++;
-               
-
-            }
-                bottom++;
-            
+       int sPointer = 0;
+       int tPointer = 0;
+       while(sPointer<s.length() && tPointer<t.length()){
+        if(s.charAt(sPointer) == t.charAt(tPointer)){
+            sPointer++;
+            tPointer++;
+        } else{
+            tPointer++;
         }
-        return top == s.length();
+       }
+       return sPointer == s.length();
+       
+       
     }
 }
